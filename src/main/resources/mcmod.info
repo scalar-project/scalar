@@ -1,0 +1,16 @@
+[
+{
+  "modid": "scalar",
+  "name": "Scalar Core",
+  "description": "Play Minecraft as your scalie and furry characters.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["noobian"],
+  "credits": "Scalar Community for their model, art, and design contributions.",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
