@@ -1,13 +1,11 @@
 package com.noobian.scalar.util;
 
-import scala.actors.threadpool.Arrays;
-
 public class ModelNameParser {
 
 	public static String getBasename(String modelName) {
 		return modelName.split("_")[0];
 	}
-	
+
 	public static ModelName parseModelName(String modelName) {
 		ModelName mn = new ModelName();
 		String[] split = modelName.split("_");
@@ -39,7 +37,8 @@ public class ModelNameParser {
 				// skin + mood
 				if (split[2].equals("erect") || split[2].equals("aroused"))
 					mn.mood = ModelMood.valueOf(split[2].toUpperCase());
-				else return null;
+				else
+					return null;
 				mn.skin = split[1];
 			}
 			return mn;
@@ -62,23 +61,23 @@ public class ModelNameParser {
 			return null;
 		}
 	}
-	
+
 	public static String generateModelName(ModelName mn) {
-		if (mn.basename == null || mn.basename.equals("")) 
+		if (mn.basename == null || mn.basename.equals(""))
 			return null;
-		
+
 		String name = mn.basename;
-		
+
 		if (mn.skin != null && !mn.skin.equals(""))
 			name += "_" + mn.skin;
-		
+
 		if (mn.mood != ModelMood.NORMAL)
 			name += "_" + mn.mood.toString().toLowerCase();
-		
+
 		if (mn.stage > 0)
 			name += "_" + String.valueOf(mn.stage);
-			
+
 		return name;
-			
+
 	}
 }

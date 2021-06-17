@@ -1,13 +1,7 @@
 package com.noobian.scalar.gui;
 
 import java.io.IOException;
-import java.util.Collection;
 
-import org.lwjgl.input.Keyboard;
-
-import com.mcf.davidee.guilib.core.Scrollbar;
-
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiLabel;
 import net.minecraft.client.gui.GuiScreen;
@@ -28,16 +22,16 @@ public class ModelSelectGui extends GuiScreen {
 		super.initGui();
 		this.buttonList.add(
 				mButtonClose = new GuiButton(0, this.width / 2 - 100, this.height - (this.height / 4) + 10, "Select"));
-		this.labelList.add(mLabelSelectModel = new GuiLabel(mc.fontRenderer, 1, this.width / 2 - 20, this.height / 2 + 40,
-				300, 20, 0xFFFFFF));
+		this.labelList.add(mLabelSelectModel = new GuiLabel(mc.fontRenderer, 1, this.width / 2 - 20,
+				this.height / 2 + 40, 300, 20, 0xFFFFFF));
 		mLabelSelectModel.addLine("Select Model");
-		modelList = new ScrollPane (this, 20, 20, 100, 50, 20) {
+		modelList = new ScrollPane(this, 20, 20, 100, 50, 20) {
 
 			@Override
 			protected void drawImpl() {
 				// TODO Auto-generated method stub
-				
-			}			
+
+			}
 		};
 //		modelList.addButton(button);
 	}

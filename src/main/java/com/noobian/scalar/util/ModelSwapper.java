@@ -1,7 +1,6 @@
 package com.noobian.scalar.util;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import com.github.gamepiaynmo.custommodel.api.CustomModelApi;
@@ -19,7 +18,7 @@ public class ModelSwapper {
 	public static boolean modelIdExists(String id) {
 		return id != null && CustomModelApi.getModelIdList().contains(id);
 	}
-	
+
 	public static String getModel(EntityPlayerMP mp) {
 		return CustomModelApi.getCurrentModelOfPlayer(mp);
 	}
@@ -164,7 +163,7 @@ public class ModelSwapper {
 		else
 			serverPlayer.sendMessage(new TextComponentString("The model either doesn't exist or is private."));
 	}
-	
+
 	public static List<String> getModelSkins(String basename) {
 		List<String> skins = new ArrayList<String>();
 		CustomModelApi.getModelIdList().forEach((s) -> {
@@ -178,7 +177,7 @@ public class ModelSwapper {
 		});
 		return skins;
 	}
-	
+
 	public static void trySwapSkin(EntityPlayerMP serverPlayer, String fullModelId) {
 		if (modelIdExists(fullModelId))
 			CustomModelApi.selectModelForPlayer(serverPlayer, fullModelId);

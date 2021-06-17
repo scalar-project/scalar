@@ -1,17 +1,11 @@
 package com.noobian.scalar.handlers;
 
-import com.github.gamepiaynmo.custommodel.api.CustomModelApi;
 import com.noobian.scalar.ClientProxy;
-import com.noobian.scalar.gui.ModelSelectGui;
 import com.noobian.scalar.network.ModelSwapMessage;
 import com.noobian.scalar.network.ScalarPacketHandler;
-import com.noobian.scalar.util.ModelMood;
 import com.noobian.scalar.util.ModelName;
-import com.noobian.scalar.util.ModelNameParser;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -38,12 +32,14 @@ public class ClientKeyPressHandler {
 
 		// Cycle arousal forward
 		else if (keyBindings[1].isPressed()) {
-			ScalarPacketHandler.INSTANCE.sendToServer(new ModelSwapMessage(ModelSwapMessage.CYCLE_AROUSAL_FORWARD, null));
+			ScalarPacketHandler.INSTANCE
+					.sendToServer(new ModelSwapMessage(ModelSwapMessage.CYCLE_AROUSAL_FORWARD, null));
 		}
 
 		// Cycle arousal backward
 		else if (keyBindings[2].isPressed()) {
-			ScalarPacketHandler.INSTANCE.sendToServer(new ModelSwapMessage(ModelSwapMessage.CYCLE_AROUSAL_BACKWARD, null));
+			ScalarPacketHandler.INSTANCE
+					.sendToServer(new ModelSwapMessage(ModelSwapMessage.CYCLE_AROUSAL_BACKWARD, null));
 		}
 
 //		// Request Change Model Screen

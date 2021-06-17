@@ -4,12 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import com.noobian.scalar.ClientProxy;
-import com.noobian.scalar.gui.ModelSelectGui;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
-import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessageHandler;

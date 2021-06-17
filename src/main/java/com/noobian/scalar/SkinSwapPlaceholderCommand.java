@@ -1,17 +1,13 @@
 package com.noobian.scalar;
 
-import java.util.List;
-
 import com.noobian.scalar.network.ModelSwapMessage;
 import com.noobian.scalar.network.ScalarPacketHandler;
 
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
-import net.minecraft.command.ICommand;
 import net.minecraft.command.ICommandSender;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.util.math.BlockPos;
 
 public class SkinSwapPlaceholderCommand extends CommandBase {
 
@@ -32,8 +28,9 @@ public class SkinSwapPlaceholderCommand extends CommandBase {
 			ScalarPacketHandler.INSTANCE.sendToServer(new ModelSwapMessage(ModelSwapMessage.REQUEST_SKIN_SCREEN, null));
 			return;
 		}
-		
-		ScalarPacketHandler.INSTANCE.sendToServer(new ModelSwapMessage(ModelSwapMessage.SWAP_SKIN, args[0].toLowerCase()));
+
+		ScalarPacketHandler.INSTANCE
+				.sendToServer(new ModelSwapMessage(ModelSwapMessage.SWAP_SKIN, args[0].toLowerCase()));
 	}
 
 	@Override
